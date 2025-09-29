@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência Consciente | Repense seu Consumo</title>
+    <style>
+        :root {
+            --primary: #2E8B57;
+            --secondary: #228B22;
+            --accent: #FF6B6B;
+            --light: #F8F9FA;
+            --dark: #343A40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 3rem 0;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 1rem;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+        }
+        
+        .impact-section {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .impact-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .interactive-section {
+            padding: 4rem 0;
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        
+        .interactive-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tree-counter {
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .tree {
+            font-size: 5rem;
+            margin: 1rem 0;
+            transition: all 0.5s ease;
+        }
+        
+        .tree.grow {
+            transform: scale(1.2);
+            color: var(--secondary);
+        }
+        
+        .pledge-button {
+            background-color: var(--primary);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .pledge-button:hover {
+            background-color: var(--secondary);
+        }
+        
+        .solutions {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .solutions h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .solution-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .tree {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Consciência Consciente</div>
+            <p class="tagline">Repensar, Reduzir, Reutilizar, Reciclar</p>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>O planeta não precisa de mais consumidores. Precisa de mais cuidadores.</h2>
+            <p>Nosso consumo excessivo está esgotando recursos naturais, poluindo oceanos e acelerando as mudanças climáticas. Mas podemos reverter essa situação começando com escolhas mais conscientes hoje.</p>
+            <a href="#interactive" class="cta-button">Faça a Diferença</a>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" id="waste-counter">0</div>
+                <div class="stat-label">Toneladas de lixo produzidas por ano</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="tree-counter">0</div>
+                <div class="stat-label">Árvores cortadas por minuto</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="co2-counter">0</div>
+                <div class="stat-label">Toneladas de CO² emitidas por ano</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="impact-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary);">O Impacto do Consumo Desnecessário</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="card-img">🌊</div>
+                    <div class="card-content">
+                        <h3>Poluição dos Oceanos</h3>
+                        <p>Mais de 8 milhões de toneladas de plástico chegam aos oceanos anualmente, ameaçando a vida marinha e ecossistemas inteiros.</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="card-img">🔥</div>
+                    <div class="card-content">
+                        <h3>Mudanças Climáticas</h3>
+                        <p>A produção em massa e o transporte de produtos contribuem significativamente para as emissões de gases de efeito estufa.</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="card-img">🌳</div>
+                    <div class="card-content">
+                        <h3>Desmatamento</h3>
+                        <p>Florestas são derrubadas para produção de bens de consumo, destruindo habitats e reduzindo a biodiversidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="interactive-section" id="interactive">
+        <div class="container">
+            <div class="interactive-container">
+                <h2>Faça sua parte</h2>
+                <p>Clique na árvore para fazer um compromisso com o consumo consciente. Cada clique representa uma ação positiva pelo planeta.</p>
+                
+                <div class="tree-counter">
+                    <span id="pledge-count">0</span> pessoas já se comprometeram
+                </div>
+                
+                <div class="tree" id="tree-icon">🌱</div>
+                
+                <button class="pledge-button" id="pledge-btn">Eu me comprometo!</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solutions">
+        <div class="container">
+            <h2>Soluções Simples para um Consumo Mais Consciente</h2>
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <div class="solution-icon">🛍️</div>
+                    <h3>Compre com propósito</h3>
+                    <p>Antes de comprar, pergunte-se: "Eu realmente preciso disso?"</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">🔧</div>
+                    <h3>Conserte em vez de substituir</h3>
+                    <p>Dê uma segunda chance aos produtos quebrados antes de descartá-los.</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">♻️</div>
+                    <h3>Recicle corretamente</h3>
+                    <p>Separe seus resíduos e encaminhe para a reciclagem adequada.</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon">🚲</div>
+                    <h3>Prefira o local</h3>
+                    <p>Compre de produtores locais para reduzir a pegada de carbono.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo">Consciência Consciente</div>
+            <p>Juntos podemos construir um futuro mais sustentável</p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+            </div>
+            <p>&copy; 2023 Consciência Consciente. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Contadores animados
+        function animateCounter(elementId, finalValue, duration) {
+            let element = document.getElementById(elementId);
+            let startValue = 0;
+            let increment = finalValue / (duration / 16); // 60fps
+            let currentValue = startValue;
+            
+            function updateCounter() {
+                currentValue += increment;
+                if (currentValue < finalValue) {
+                    element.textContent = Math.floor(currentValue).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = finalValue.toLocaleString();
+                }
+            }
+            
+            updateCounter();
+        }
+        
+        // Iniciar contadores quando a página carregar
+        window.addEventListener('load', function() {
+            animateCounter('waste-counter', 2100000000, 2000);
+            animateCounter('tree-counter', 27000, 2000);
+            animateCounter('co2-counter', 36000000000, 2000);
+        });
+        
+        // Interatividade da árvore
+        const treeIcon = document.getElementById('tree-icon');
+        const pledgeBtn = document.getElementById('pledge-btn');
+        const pledgeCount = document.getElementById('pledge-count');
+        let count = 0;
+        
+        function makePledge() {
+            count++;
+            pledgeCount.textContent = count;
+            
+            // Animar a árvore
+            treeIcon.classList.add('grow');
+            setTimeout(() => {
+                treeIcon.classList.remove('grow');
+            }, 500);
+            
+            // Mudar a árvore conforme mais pessoas se comprometem
+            if (count >= 10) {
+                treeIcon.textContent = '🌿';
+            }
+            if (count >= 25) {
+                treeIcon.textContent = '🌳';
+            }
+            if (count >= 50) {
+                treeIcon.textContent = '🌲';
+            }
+            
+            // Mostrar mensagem de agradecimento
+            alert('Obrigado pelo seu compromisso! Juntos fazemos a diferença.');
+        }
+        
+        treeIcon.addEventListener('click', makePledge);
+        pledgeBtn.addEventListener('click', makePledge);
+    </script>
+</body>
+</html>
